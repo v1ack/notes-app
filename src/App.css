@@ -1,39 +1,106 @@
 .App {
-  text-align: center;
+    display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+aside {
+    height: 100vh;
+    float: left;
+    width: 300px;
+    background: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.container {
+    padding: 30px 15px;
+    box-sizing: border-box;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.NotesContainer {
+    flex-grow: 1;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #6b6eff;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.add-note {
+    font-size: 1em;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 2px 2px 2px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: white;
+    background: rgb(255 255 255 / 20%);
+
+    display: flex;
+    align-items: center;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
+.add-note input[type="text"] {
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    background: transparent;
+    border: none;
+    color: inherit;
+    width: 100%;
+}
+
+.add-note input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.51);
+}
+
+.clickable {
+    border-radius: 6px;
+}
+
+.clickable:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.Note {
+    padding: 8px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    background: rgb(255 255 255 / 20%);
+    color: white;
+}
+
+.Note .complete {
+    text-decoration: line-through;
+}
+
+.NotesList {
+    overflow-y: overlay;
+    flex-grow: 1;
+}
+
+.LeftSideItem {
+    font-size: 1.2em;
+    padding: 8px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.LeftSideItem.active {
+    background: rgb(0 0 0 / 5%);
+}
+
+.LeftSideItem:hover {
+    background: rgb(0 0 0 / 10%);
+    color: rgb(0 0 0 / 95%);
+}
+
+.Note img, .add-note img {
+    margin: 5px;
+}
+
+.app-header {
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.6em;
+    margin-bottom: 12px;
 }
