@@ -3,15 +3,14 @@ import {useDispatch} from "react-redux"
 import {
     del,
 } from "../features/notesSlice"
-import tick from "./note/tick.svg"
-import circle from "./note/circle.svg"
+import {Tick} from "./note/tick"
 
 export function Note(props) {
     const dispatch = useDispatch()
 
     return <div className="Note clickable">
-        <img onClick={() => dispatch(del(props.id))}
-             src={props.complete ? tick : circle} alt="icon"/>
+        <Tick ticked={props.complete}
+              onClick={() => dispatch(del(props.id))}/>
         <span className={
             (props.complete ? "complete" : "")
         }>{props.text}</span>

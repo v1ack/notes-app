@@ -21,6 +21,7 @@ aside {
     display: flex;
     flex-direction: column;
     background: #6b6eff;
+    transition: background 0.2s;
 }
 
 .add-note {
@@ -67,6 +68,7 @@ aside {
     align-items: center;
     background: rgb(255 255 255 / 20%);
     color: white;
+    word-break: break-word;
 }
 
 .Note .complete {
@@ -76,6 +78,7 @@ aside {
 .NotesList {
     overflow-y: overlay;
     flex-grow: 1;
+    position: relative;
 }
 
 .LeftSideItem {
@@ -83,19 +86,25 @@ aside {
     padding: 8px;
     margin: 2px;
     cursor: pointer;
+    transition: background 0.2s;
+    color: var(--color)
 }
 
 .LeftSideItem.active {
-    background: rgb(0 0 0 / 5%);
+    background: var(--color-active);
+}
+
+.LeftSideItem.active:hover {
+    background: var(--color-active-hover);
 }
 
 .LeftSideItem:hover {
-    background: rgb(0 0 0 / 10%);
-    color: rgb(0 0 0 / 95%);
+    background: rgb(0 0 0 / 4%);
 }
 
-.Note img, .add-note img {
+.Note svg, .add-note svg {
     margin: 5px;
+    vertical-align: middle;
 }
 
 .app-header {
