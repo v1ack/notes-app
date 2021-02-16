@@ -5,22 +5,46 @@ export const notesSlice = createSlice({
     initialState: {
         notes: [{
             id: 1,
-            text: "Привет мир! 😘",
-            complete: false,
-            visible: true,
+            text: "Сделать список задач",
+            complete: true,
         }, {
             id: 2,
-            text: "Приветики",
-            complete: false,
-            visible: true,
+            text: "Сделать фильтрацию по статусу задачи",
+            complete: true,
         }, {
             id: 3,
-            text: "Сделанная задача",
-            complete: true,
-            visible: false,
+            text: "Добавить теги к зачам",
+            complete: false,
+        }, {
+            id: 4,
+            text: "Добавить настройку цвета",
+            complete: false,
+        }, {
+            id: 5,
+            text: "Редактирование задач",
+            complete: false,
+        }, {
+            id: 6,
+            text: "Возможность добавления подзадач",
+            complete: false,
+        }, {
+            id: 7,
+            text: "Собрать в приложение на электроне",
+            complete: false,
+        }, {
+            id: 8,
+            text: "Локальное сохранение списка задач",
+            complete: false,
+        }, {
+            id: 9,
+            text: "Deadline и важность задач",
+            complete: false,
+        }, {
+            id: 10,
+            text: "Сортировка задач",
+            complete: false,
         }],
-        id: 4,
-
+        id: 11,
     },
     reducers: {
         add: (state, action) => {
@@ -28,7 +52,6 @@ export const notesSlice = createSlice({
                 id: state.id++,
                 text: action.payload,
                 complete: false,
-                visible: true,
             }]
         },
         del: (state, action) => {

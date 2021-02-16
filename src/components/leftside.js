@@ -34,7 +34,10 @@ export function LeftSide() {
 
     return <aside className="container">
         <header className="app-header">✔ ToDo</header>
+        <div className="LeftSideContainer">
         {leftside.map((ls, index) =>
             <LeftSideItem {...ls} active={active === index} click={() => click(index)} key={ls.name}/>)}
+        </div>
+        <footer><a href="https://github.com/v1ack/notes-app/">Репозиторий на GitHub</a></footer>
     </aside>
 }

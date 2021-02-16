@@ -7,6 +7,21 @@ aside {
     float: left;
     width: 300px;
     background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+aside footer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #929292;
+}
+
+.LeftSideContainer {
+    flex-grow: 1;
 }
 
 .container {
