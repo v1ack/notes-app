@@ -1,67 +1,34 @@
 import {createSlice} from "@reduxjs/toolkit"
+import initList from "./initList.json"
 
 export const notesSlice = createSlice({
     name: "notes",
-    initialState: {
-        notes: [{
-            id: 1,
-            text: "Сделать список задач",
-            complete: true,
-        }, {
-            id: 2,
-            text: "Сделать фильтрацию по статусу задачи",
-            complete: true,
-        }, {
-            id: 3,
-            text: "Добавить теги к зачам",
-            complete: false,
-        }, {
-            id: 4,
-            text: "Добавить настройку цвета",
-            complete: false,
-        }, {
-            id: 5,
-            text: "Редактирование задач",
-            complete: false,
-        }, {
-            id: 6,
-            text: "Возможность добавления подзадач",
-            complete: false,
-        }, {
-            id: 7,
-            text: "Собрать в приложение на электроне",
-            complete: false,
-        }, {
-            id: 8,
-            text: "Локальное сохранение списка задач",
-            complete: false,
-        }, {
-            id: 9,
-            text: "Deadline и важность задач",
-            complete: false,
-        }, {
-            id: 10,
-            text: "Сортировка задач",
-            complete: false,
-        }],
-        id: 11,
-    },
+    initialState: initList,
     reducers: {
         add: (state, action) => {
             state.notes = [...state.notes, {
                 id: state.id++,
-                text: action.payload,
-                complete: false,
+                text: action.payload.text,
+                completed: false,
+                tags: action.payload.tags || [],
             }]
         },
         del: (state, action) => {
             let note = state.notes.find(i => i.id === action.payload)
-            note.complete = !note.complete
+            note.completed = !note.completed
+        },
+        edit: (state, action) => {
+            let note = state.notes.find(i => i.id === action.payload.id)
+            if ("text" in action.payload)
+                note.text = action.payload.text
+            if ("tags" in action.payload)
+                note.tags = action.payload.tags
         },
     },
 })
 
-export const {add, del} = notesSlice.actions
+export const {add, del, edit} = notesSlice.actions
 
 export const selectNotes = state => state.notes.notes
+export const selectTags = state => state.notes.tags
 export default notesSlice.reducer

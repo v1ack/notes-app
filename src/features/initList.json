@@ -1,0 +1,145 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "text": "Сделать список задач",
+      "completed": true,
+      "tags": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Сделать фильтрацию по статусу задачи",
+      "completed": true,
+      "tags": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Добавить теги к зачам",
+      "completed": true,
+      "tags": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Добавить настройку цвета",
+      "completed": false,
+      "tags": [
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Редактирование задач",
+      "completed": true,
+      "tags": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Возможность добавления подзадач",
+      "completed": false,
+      "tags": [
+        2
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Собрать в приложение на электроне",
+      "completed": false,
+      "tags": [
+        4
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Локальное сохранение списка задач",
+      "completed": false,
+      "tags": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Deadline и важность задач",
+      "completed": false,
+      "tags": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Сортировка задач",
+      "completed": false,
+      "tags": [
+        2
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Адаптивная верстка",
+      "completed": false,
+      "tags": [
+        4
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Собрать в React Native",
+      "completed": false,
+      "tags": [
+        4
+      ]
+    }
+  ],
+  "tags": {
+    "1": {
+      "label": "Минимум",
+      "id": 1,
+      "order": 1,
+      "colors": [
+        "#FF0099",
+        "#493240"
+      ]
+    },
+    "2": {
+      "label": "Задачи",
+      "id": 2,
+      "order": 2,
+      "colors": [
+        "#DA4453",
+        "#89216B"
+      ]
+    },
+    "3": {
+      "label": "Настройки",
+      "id": 3,
+      "order": 3,
+      "colors": [
+        "#00d2ff",
+        "#3a47d5"
+      ]
+    },
+    "4": {
+      "label": "Платформы",
+      "id": 4,
+      "order": 4,
+      "colors": [
+        "#d53369",
+        "#daae51"
+      ]
+    }
+  },
+  "id": 13
+}

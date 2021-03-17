@@ -4,14 +4,22 @@
 
 aside {
     height: 100vh;
+    width: 300px;
+    background: white;
+    flex-shrink: 0;
+}
+
+.LeftSide {
+    height: 100vh;
     float: left;
     width: 300px;
     background: white;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
 }
 
-aside footer {
+.LeftSide footer {
     text-align: center;
 }
 
@@ -36,7 +44,7 @@ a {
     display: flex;
     flex-direction: column;
     background: #6b6eff;
-    transition: background 0.2s;
+    transition: background 0.5s;
 }
 
 .add-note {
@@ -122,9 +130,75 @@ a {
     vertical-align: middle;
 }
 
+.Note-text {
+    flex-grow: 1;
+}
+
 .app-header {
     font-weight: 300;
     text-align: center;
     font-size: 1.6em;
     margin-bottom: 12px;
+}
+
+.RightSide > .close-button {
+    position: relative;
+    left: 100%;
+    transform: translateX(-100%);
+    display: block;
+    background: none;
+    border: none;
+    color: #a7a7a7;
+    font-size: 2em;
+    padding: 10px;
+}
+
+.RightSide > .edit-field {
+    border: 1px solid #c8c8c8;
+    border-radius: 6px;
+    padding: 3px;
+    margin: 6px;
+}
+
+.RightSide > .taglist {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 6px;
+}
+
+.RightSide > .taglist > div {
+    background: #f1f1f1;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    transition: border ease-in-out 0.3s, background linear 0.2s;
+}
+
+.RightSide > .taglist > div:hover {
+    border: 1px solid #cacaca;
+}
+
+.RightSide > .taglist > .active {
+    background: #dfeffe;
+}
+
+.Tag {
+    font-size: 0.8em;
+    background: #ffffff47;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+::-webkit-scrollbar-track-piece {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
 }

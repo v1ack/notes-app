@@ -2,14 +2,14 @@ import {Note} from "./note"
 import {useDispatch, useSelector} from "react-redux"
 import {add, selectNotes} from "../features/notesSlice"
 import {useTransition, animated} from "react-spring"
-import {filters, selectFilter} from "../features/configsSlice"
+import {selectFilter, filtered, selectBackground} from "../features/configsSlice"
 import {Tick} from "./note/tick"
 
 export function NotesList() {
     const notes = useSelector(selectNotes)
     const filter = useSelector(selectFilter)
 
-    const transitions = useTransition(notes.filter(filters[filter].func), item => item.id, {
+    const transitions = useTransition(filtered(notes, filter), item => item.id, {
         from: {opacity: 0, transform: "scale(0)"},
         enter: {opacity: 1, transform: "scale(1)"},
         leave: {opacity: 0, transform: "scale(0)", position: "absolute", width: "100%"},
@@ -27,11 +27,12 @@ export function NotesList() {
 
 export function AddNote() {
     const dispatch = useDispatch()
+    const filter = useSelector(selectFilter)
 
     function handleEnter(e) {
         if (e.key !== "Enter" || !e.target.value)
             return
-        dispatch(add(e.target.value))
+        dispatch(add({text: e.target.value, tags: filter.tags}))
         e.target.value = ""
     }
 
@@ -42,9 +43,9 @@ export function AddNote() {
 }
 
 export function NotesContainer() {
-    const filter = useSelector(selectFilter)
+    const background = useSelector(selectBackground)
     const style = {
-        background: `linear-gradient(45deg, ${filters[filter].background[0]}, ${filters[filter].background[1]})`,
+        background: `linear-gradient(45deg, ${background[0]}, ${background[1]})`,
     }
 
     return <div className="container NotesContainer" style={style}>
